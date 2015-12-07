@@ -10,15 +10,15 @@ TARGET = Lib
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES +=  investition.c \
+SOURCES +=  \
     issituated.c \
     multiply.c \
-    count_number.c
+    investition.c
 
-HEADERS += investition.h \
+HEADERS += \
     issituated.h \
     multiply.h \
-    count_number.h
+    investition.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

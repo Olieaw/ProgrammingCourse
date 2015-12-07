@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include "count_investition.h"
+
+float investition_sum(int year, float sum, float percent);
+
+float investition_sum(int year, float sum, float percent)
+{
+    for(year = 0; year <= 4; year++)
+    {
+        sum = sum + (sum * (percent / 100));
+    }
+    return(sum);
+}
+

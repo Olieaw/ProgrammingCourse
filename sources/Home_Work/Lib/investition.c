@@ -1,21 +1,19 @@
-#include <stdio.h>
+#include "investition.h"
 
-float investition_sum(int year, float sum, float percent);
-
-void investition()
+void input()
 {
     float sum, percent;
     int year;
+    float investition_sum(int year, float sum, float percent);
 
     printf("Enter sum\n");
     scanf("%f", &sum);
     printf("Enter interest\n");
     scanf("%f", &percent);
 
-    printf("Your amount in 5 years:  %f", investition_sum(year, sum, percent));
-
-    return (0);
+    printf("Your amount in 5 years:  %f\n", investition_sum(year, sum, percent));
 }
+
 
 float investition_sum(int year, float sum, float percent)
 {
