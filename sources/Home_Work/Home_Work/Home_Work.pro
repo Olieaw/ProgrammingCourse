@@ -7,7 +7,8 @@ SOURCES += main.c \
     menu.c \
     menu_multiplication.c \
     menu_investition.c \
-    menu_issituated.c
+    menu_issituated.c \
+    menu_matrix.c
 
 HEADERS += \
     main.h

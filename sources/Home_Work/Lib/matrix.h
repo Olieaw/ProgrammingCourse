@@ -1,5 +1,5 @@
-#ifndef MULTIPLY_H
-#define MULTIPLY_H
+#ifndef MATRIX
+#define MATRIX
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,12 +12,12 @@ extern "C" {
 
 #endif
 
-void menu_multiply();
-void multiply();
-
+void menu_matrix();
+int matrix();
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // MULTIPLY_H
+#endif // MATRIX
+

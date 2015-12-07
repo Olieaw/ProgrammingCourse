@@ -1,7 +1,7 @@
 #include "main.h"
-#include "issituated.h"
+#include "matrix.h"
 
-void menu_issituated()
+void menu_matrix()
 {
     int way;
     printf("1.Enter the number\n");
@@ -15,8 +15,8 @@ void menu_issituated()
         {
         case 1:
             system("cls");
-            issituated();
-            menu_issituated();
+            matrix();
+            menu_matrix();
             break;
         case 9:
             system("cls");
@@ -28,7 +28,7 @@ void menu_issituated()
         default:
             system("cls");
             puts("Error. There's no such option.\n");
-            menu_issituated();
+            menu_matrix();
             break;
         }
     }
@@ -36,6 +36,6 @@ void menu_issituated()
     {
         system("cls");
         puts("Error. Wrong input data type.\n");
-        menu_issituated();
+        menu_matrix();
     }
 }

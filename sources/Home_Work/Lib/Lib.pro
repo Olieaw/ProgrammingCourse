@@ -13,12 +13,14 @@ CONFIG += staticlib
 SOURCES +=  \
     issituated.c \
     multiply.c \
-    investition.c
+    investition.c \
+    matrix.c
 
 HEADERS += \
     issituated.h \
     multiply.h \
-    investition.h
+    investition.h \
+    matrix.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

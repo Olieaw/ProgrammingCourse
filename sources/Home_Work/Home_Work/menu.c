@@ -1,6 +1,7 @@
 #include "investition.h"
 #include "issituated.h"
 #include "multiply.h"
+#include "matrix.h"
 
 int menu()
 {
@@ -9,6 +10,7 @@ int menu()
     printf("1.Bank\n");
     printf("2.Houses\n");
     printf("3.Multiply\n");
+    printf("4.Matrix\n");
     printf("0.Exit\n");
     printf(">>> ");
 
@@ -27,6 +29,10 @@ int menu()
         case 3:
             system("cls");
             menu_multiply();
+            break;
+        case 4:
+            system("cls");
+            menu_matrix();
             break;
         case 0:
             system("cls");
