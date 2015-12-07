@@ -1,6 +1,8 @@
 #include <QString>
 #include <QtTest>
 
+
+/// Тесты нужно реализовать обязательно
 class TestTest : public QObject
 {
     Q_OBJECT

@@ -29,6 +29,7 @@ void consider_element_multiplier(int multiplier1, int multiplier2)
     printf("%d\n", spase_consider);
 }
 
+/// И это тоже лично обсудим, так это многословно...
 void count_terms_second_element_and_add_in_array(int multiplier1, int multiplier2)
 {
     int spase_multiplier2, i;

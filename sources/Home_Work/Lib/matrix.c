@@ -23,6 +23,9 @@
     }
 }*/
 
+
+/// Этот код требует ваших мне устных комментариев,
+/// давайте найдем время обсудить его...
 int matrix()
 {
     int **matrix;
@@ -33,22 +36,22 @@ int matrix()
     int i, j;
     matrix = (int**)malloc(a*sizeof(int*));
     for(i = 0; i < a; i++)
-        {
+    {
         matrix[i] = (int*)malloc(a*sizeof(int));
-        }
+    }
     for(i = 0; i < a; i++)
         for(j = 0; j < a; j++)
         {
-        scanf("%d", &matrix[i][j]);
+            scanf("%d", &matrix[i][j]);
         }
     printf("\n\n");
     for(i = 0; i < a; i++)
     {
-       for(j = 0; j < a; j++)
-       {
+        for(j = 0; j < a; j++)
+        {
             printf("%d ",matrix[i][j]);
-       }
-       printf("\n\n");
+        }
+        printf("\n\n");
     }
     printf("\n\n");
     transport_areey_main(matrix, a);

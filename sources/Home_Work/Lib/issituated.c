@@ -21,16 +21,26 @@ void issituated()
     }
 }
 
+
+/// Давайте заведем структуры для координат?
 int calculation(int length_plot, int width_plot, int length_house1, int width_house1, int length_house2, int width_house2)
 {
-    int i;
-    if (((length_plot >= (length_house2 + length_house1)) && (width_plot >= width_house2) && (width_plot >= width_house1)) || ((width_plot >= (width_house2 + width_house1)) && (length_plot >= length_house1) && (length_plot >= length_house2)))
+
+    /// Эта длиннющая строка вообще не читается, подумайте, может быть сделать
+    /// несколько маленьких функций с говорящими названиями,
+    /// которые бы возвращали истину или ложь,
+    /// is_cat_eats_dog() && is_sun_shining || is_blabla
+    if (((length_plot >= (length_house2 + length_house1))
+         && (width_plot >= width_house2)
+         && (width_plot >= width_house1))
+            || ((width_plot >= (width_house2 + width_house1))
+                && (length_plot >= length_house1)
+                && (length_plot >= length_house2)))
     {
-        i = 1;
+        return 1;
     }
     else
     {
-        i = 0;
+        return 0;
     }
-    return i;
 }
