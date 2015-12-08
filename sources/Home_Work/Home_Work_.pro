@@ -5,6 +5,7 @@ Test.depends = Lib
 
 SUBDIRS += \
     Lib \
-    Home_Work
+    Home_Work \
+    Test
 
 

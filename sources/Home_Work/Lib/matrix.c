@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <malloc.h>
+#include "matrix.h"
 
 /*void arrey1(int **matrix, int a)
 {
@@ -24,39 +23,6 @@
     }
 }*/
 
-void transport_areey_main(int **matrix, int a)
-{
-    int copy , i , j;
-    int b = 0;
-    for (i = 0; i < a; i++)
-    {
-        for(j = 0; j < a; j++)
-        {
-            copy = matrix[i][j];
-            matrix[i][j] = matrix[j][i];
-            matrix[j][i] = copy;
-            printf("%d ", matrix[i][j]);
-            b++;
-        }
-        printf("\n\n");
-    }
-}
-
-void transport_areey_secondary_diagonal(int **matrix, int a)
-{
-    int t, i, j;
-    for (i = 0; i < a; i++)
-    {
-        for(j = 0; j < a; j++)
-        {
-            t = matrix[i][j];
-            matrix[i][j] = matrix[a-j-1][a-i-1];
-            matrix[a-j-1][a-i-1] = t;
-        }
-        printf("\n\n");
-    }
-}
-
 int matrix()
 {
     int **matrix;
@@ -75,6 +41,7 @@ int matrix()
         {
         scanf("%d", &matrix[i][j]);
         }
+    printf("\n\n");
     for(i = 0; i < a; i++)
     {
        for(j = 0; j < a; j++)
@@ -83,8 +50,88 @@ int matrix()
        }
        printf("\n\n");
     }
-    printf("\n\n\n");
+    printf("\n\n");
     transport_areey_main(matrix, a);
+    printf("\n\n");
+    return_areey(matrix, a);
+    printf("\n\n");
     transport_areey_secondary_diagonal(matrix, a);
 
 }
+
+void transport_areey_main(int **matrix, int a)
+{
+    int copy , i , j;
+    int b = 0;
+    for (i = 0; i < a; i++)
+    {
+        b++;
+        for(j = 0; j < b; j++)
+        {
+            copy = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = copy;
+        }
+    }
+
+    for (i = 0; i < a; i++)
+    {
+        for(j = 0; j < a; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n\n");
+    }
+}
+
+void return_areey(int **matrix, int a)
+{
+    int copy , i , j;
+    int b = 0;
+    for (i = 0; i < a; i++)
+    {
+        b++;
+        for(j = 0; j < b; j++)
+        {
+            copy = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = copy;
+        }
+    }
+
+    for (i = 0; i < a; i++)
+    {
+        for(j = 0; j < a; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n\n");
+    }
+}
+
+void transport_areey_secondary_diagonal(int **matrix, int a)
+{
+    int i, j, copy;
+    int b = a;
+    for (i = 0; i < a - 1; i++)
+    {
+        b--;
+        for(j = 0; j < b; j++)
+        {
+            copy = matrix[i][j];
+            matrix[i][j] = matrix[a-j-1][a-i-1];
+            matrix[a-j-1][a-i-1] = copy;
+        }
+    }
+
+    for (i = 0; i < a; i++)
+    {
+        for(j = 0; j < a; j++)
+        {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n\n");
+    }
+}
+
+

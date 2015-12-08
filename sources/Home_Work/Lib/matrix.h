@@ -14,6 +14,10 @@ extern "C" {
 
 void menu_matrix();
 int matrix();
+void arrey1(int**, int);
+void transport_areey_main(int**, int);
+void transport_areey_secondary_diagonal(int**, int);
+void return_areey(int**, int);
 
 #ifdef __cplusplus
 }
