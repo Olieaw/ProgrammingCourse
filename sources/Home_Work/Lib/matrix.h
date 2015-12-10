@@ -18,6 +18,9 @@ void arrey1(int**, int);
 void transport_areey_main(int**, int);
 void transport_areey_secondary_diagonal(int**, int);
 void return_areey(int**, int);
+int comparing_transport_areey_main(int**, int**, int);
+int comparing_transport_areey_secondary_diagonal(int**, int**, int);
+void enter_result(int , int );
 
 #ifdef __cplusplus
 }
