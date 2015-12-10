@@ -213,7 +213,7 @@ int comparing_transport_areey_secondary_diagonal(int**matrix1, int**matrix2, int
     return(check_areey_secondary_diagonal);
 }
 
-void enter_result(int check_areey_main, int check_areey_secondary_diagonal)
+void enter_result(int *check_areey_main, int *check_areey_secondary_diagonal)
 {
     if((check_areey_main == 1) || (check_areey_secondary_diagonal == 1))
     {
@@ -221,7 +221,7 @@ void enter_result(int check_areey_main, int check_areey_secondary_diagonal)
     }
     else
     {
-        printf("Matrix is not transported");
+        printf("Matrix is not transported\n");
     }
 }
 

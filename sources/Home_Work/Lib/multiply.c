@@ -3,9 +3,6 @@
 void multiply()
 {
     int multiplier1, multiplier2;
-    void consider_element_multiplier(int multiplier1, int multiplier2);
-    void count_terms_second_element_and_add_in_array(int multiplier1, int multiplier2);
-
     printf("Enter first multiplier:\n");
     scanf("%d", &multiplier1);
     printf("Enter second multiplier:\n");

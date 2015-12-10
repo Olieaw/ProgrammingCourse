@@ -14,7 +14,8 @@ extern "C" {
 
 void menu_multiply();
 void multiply();
-
+void consider_element_multiplier(int, int);
+void count_terms_second_element_and_add_in_array(int, int);
 
 #ifdef __cplusplus
 }
