@@ -16,6 +16,9 @@ extern "C" {
 struct poligon{
     int length;
     int width;
+    int plot;
+    int house1;
+    int house2;
 };
 
 void menu_issituated();

@@ -43,9 +43,9 @@ void menu_issituated()
 void issituated()
 {
 
-    poligon plot;
-    poligon house1;
-    poligon house2;
+    struct poligon plot;
+    struct poligon house1;
+    struct poligon house2;
     printf("Print land x, y:");
     scanf("%d%d", &plot.length, &plot.width);
     printf("Print the coordinates of house 1:");
@@ -55,10 +55,10 @@ void issituated()
 
     if (calculation(plot, house1, house2) == 1)
     {
-        printf("There are enough space for who houses\n");
+        printf("There is enough space for who houses\n");
     }
     else
     {
-        printf("There are not enough space for who houses\n");
+        printf("There is not enough space for who houses\n");
     }
 }

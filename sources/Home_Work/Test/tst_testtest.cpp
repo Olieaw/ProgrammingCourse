@@ -33,15 +33,17 @@ void TestTest::test_investition()
 
 void TestTest::test_issituated()
 {
-    int length_plot, width_plot, length_house1, width_house1, length_house2, width_house2, test2
-            ;
-    length_plot = 20;
-    width_plot = 10;
-    length_house1 = 10;
-    width_house1 = 10;
-    length_house2 = 10;
-    width_house2 = 10;
-    test2 = calculation(length_plot, width_plot, length_house1, width_house1, length_house2, width_house2);
+    int test2;
+    struct poligon plot;
+    struct poligon house1;
+    struct poligon house2;
+    plot.length = 20;
+    plot.width = 10;
+    house1.length = 10;
+    house1.width = 10;
+    house2.length = 10;
+    house2.width = 10;
+    test2 = calculation(plot, house1, house2);
     QCOMPARE(test2,1);
 }
 
