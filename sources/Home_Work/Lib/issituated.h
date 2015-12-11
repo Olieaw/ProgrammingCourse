@@ -14,6 +14,7 @@ extern "C" {
 
 void menu_issituated();
 void issituated();
+int calculation(int, int, int, int, int, int);
 
 #ifdef __cplusplus
 }

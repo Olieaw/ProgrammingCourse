@@ -14,7 +14,7 @@ extern "C" {
 
 void menu_investition();
 void input();
-float investition_sum(int year, float sum, float percent);
+float investition_sum(float, float);
 
 #ifdef __cplusplus
 }
