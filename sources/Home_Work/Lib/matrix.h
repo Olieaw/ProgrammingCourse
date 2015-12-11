@@ -21,6 +21,9 @@ void return_areey(int**, int);
 int comparing_transport_areey_main(int**, int**, int);
 int comparing_transport_areey_secondary_diagonal(int**, int**, int);
 int enter_result(int, int);
+void enter_manually_matrix1(int**, int);
+void enter_manually_matrix2(int**, int);
+void enter_keyboard(int**, int**, int);
 
 #ifdef __cplusplus
 }

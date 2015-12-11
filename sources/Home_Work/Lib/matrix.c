@@ -14,15 +14,6 @@ void transport_areey_main(int **matrix1, int a)
             matrix1[j][i] = copy;
         }
     }
-
-    for (i = 0; i < a; i++)
-    {
-        for(j = 0; j < a; j++)
-        {
-            printf("%d ", matrix1[i][j]);
-        }
-        printf("\n\n");
-    }
 }
 
 int comparing_transport_areey_main(int **matrix1, int **matrix2, int a)
@@ -61,15 +52,6 @@ void return_areey(int **matrix1, int a)
             matrix1[j][i] = copy;
         }
     }
-
-    for (i = 0; i < a; i++)
-    {
-        for(j = 0; j < a; j++)
-        {
-            printf("%d ", matrix1[i][j]);
-        }
-        printf("\n\n");
-    }
 }
 
 void transport_areey_secondary_diagonal(int **matrix1, int a)
@@ -85,15 +67,6 @@ void transport_areey_secondary_diagonal(int **matrix1, int a)
             matrix1[i][j] = matrix1[a-j-1][a-i-1];
             matrix1[a-j-1][a-i-1] = copy;
         }
-    }
-
-    for (i = 0; i < a; i++)
-    {
-        for(j = 0; j < a; j++)
-        {
-            printf("%d ", matrix1[i][j]);
-        }
-        printf("\n\n");
     }
 }
 

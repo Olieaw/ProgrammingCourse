@@ -15,6 +15,7 @@ public:
 private Q_SLOTS:
     void test_investition();
     void test_issituated();
+    //void test_matrix();
 };
 
 TestTest::TestTest()
@@ -46,6 +47,16 @@ void TestTest::test_issituated()
     test2 = calculation(plot, house1, house2);
     QCOMPARE(test2,1);
 }
+
+/*void TestTest::test_investition()
+{
+    float sum, persent, test;
+    sum = 1000;
+    persent = 100;
+    test = investition_sum(sum, persent);
+    QCOMPARE(test,32000.0);
+    QVERIFY2(true, "Failure");
+}*/
 
 QTEST_APPLESS_MAIN(TestTest)
 
