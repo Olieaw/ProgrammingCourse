@@ -8,12 +8,13 @@ int matrix()
     scanf("%d", &a);
     printf("Print %d errey elements:\n", a * a);
     int i, j;
+
     // Первая матрица
     matrix1 = (int**)malloc(a*sizeof(int*));
     for(i = 0; i < a; i++)
-        {
+    {
         matrix1[i] = (int*)malloc(a*sizeof(int));
-        }
+    }
     FILE *file_matrix1 = fopen ("matrix1.txt", "r");
     if(!file_matrix1)
     {
@@ -40,18 +41,19 @@ int matrix()
     printf("\n\n");
     for(i = 0; i < a; i++)
     {
-       for(j = 0; j < a; j++)
-       {
+        for(j = 0; j < a; j++)
+        {
             printf("%d ",matrix1[i][j]);
-       }
-       printf("\n\n");
+        }
+        printf("\n\n");
     }
+
     // Вторая матрица
     matrix2 = (int**)malloc(a*sizeof(int*));
     for(i = 0; i < a; i++)
-        {
+    {
         matrix2[i] = (int*)malloc(a*sizeof(int));
-        }
+    }
     FILE *file_matrix2 = fopen ("matrix2.txt", "r");
     if(!file_matrix2)
     {
@@ -72,28 +74,22 @@ int matrix()
                 fscanf(file_matrix2, "%d ", matrix2[i][j]);
             }
             fscanf(file_matrix2, "\n");
-        }
-        fclose(file_matrix2);
-    }
-    printf("\n\n");
-    for(i = 0; i < a; i++)
-    {
-       for(j = 0; j < a; j++)
-       {
-            printf("%d ",matrix2[i][j]);
-       }
-       printf("\n\n");
-    }
 
-    printf("\n\n");
-    transport_areey_main(matrix1, a);
-    printf("\n\n");
-    comparing_transport_areey_main(matrix1, matrix2, a);
-    return_areey(matrix1, a);
-    printf("\n\n");
-    transport_areey_secondary_diagonal(matrix1, a);
-    comparing_transport_areey_secondary_diagonal(matrix1, matrix2, a);
-    enter_result(check_areey_main, check_areey_secondary_diagonal);
+        }
+
+
+        /// Этот код требует ваших мне устных комментариев,
+        /// давайте найдем время обсудить его...
+        printf("\n\n");
+        transport_areey_main(matrix1, a);
+        printf("\n\n");
+        comparing_transport_areey_main(matrix1, matrix2, a);
+        return_areey(matrix1, a);
+        printf("\n\n");
+        transport_areey_secondary_diagonal(matrix1, a);
+        comparing_transport_areey_secondary_diagonal(matrix1, matrix2, a);
+        enter_result(check_areey_main, check_areey_secondary_diagonal);
+    }
 }
 
 void transport_areey_main(int **matrix1, int a)

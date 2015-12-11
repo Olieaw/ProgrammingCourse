@@ -51,3 +51,4 @@ void input()
 
     printf("Your amount in 5 years:  %f\n", investition_sum(sum, percent));
 }
+

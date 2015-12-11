@@ -1,6 +1,6 @@
 #include "investition.h"
 
-float investition_sum(float sum, float percent)
+double investition_sum(double sum, double percent)
 {
     int year;
     for(year = 0; year <= 4; year++)

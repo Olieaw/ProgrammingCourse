@@ -3,6 +3,8 @@
 #include "investition.h"
 #include "issituated.h"
 
+
+/// Тесты нужно реализовать обязательно
 class TestTest : public QObject
 {
     Q_OBJECT

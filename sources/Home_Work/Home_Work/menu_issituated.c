@@ -42,16 +42,18 @@ void menu_issituated()
 
 void issituated()
 {
-    int length_plot, width_plot, length_house1, width_house1, length_house2, width_house2;
 
+    poligon plot;
+    poligon house1;
+    poligon house2;
     printf("Print land x, y:");
-    scanf("%d%d", &length_plot, &width_plot);
+    scanf("%d%d", &plot.length, &plot.width);
     printf("Print the coordinates of house 1:");
-    scanf("%d%d", &length_house1, &width_house1);
+    scanf("%d%d", &house1.length, &house1.width);
     printf("Print the coordinates of house 2:");
-    scanf("%d%d", &length_house2, &width_house2);
+    scanf("%d%d", &house2.length, &house2.width);
 
-    if (calculation(length_plot, width_plot, length_house1, width_house1, length_house2, width_house2) == 1)
+    if (calculation(plot, house1, house2) == 1)
     {
         printf("There are enough space for who houses\n");
     }

@@ -14,7 +14,8 @@ extern "C" {
 
 void menu_investition();
 void input();
-float investition_sum(float, float);
+double investition_sum(double, double);
+
 
 #ifdef __cplusplus
 }

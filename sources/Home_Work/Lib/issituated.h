@@ -12,9 +12,15 @@ extern "C" {
 
 #endif
 
+
+struct poligon{
+    int length;
+    int width;
+};
+
 void menu_issituated();
 void issituated();
-int calculation(int, int, int, int, int, int);
+int calculation(struct poligon, struct poligon, struct poligon);
 
 #ifdef __cplusplus
 }
