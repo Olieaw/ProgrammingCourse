@@ -2,6 +2,7 @@
 #include <QtTest>
 #include "investition.h"
 #include "issituated.h"
+#include "matrix.h"
 
 
 /// Тесты нужно реализовать обязательно
@@ -48,13 +49,19 @@ void TestTest::test_issituated()
     QCOMPARE(test2,1);
 }
 
-/*void TestTest::test_investition()
-{
-    float sum, persent, test;
-    sum = 1000;
-    persent = 100;
-    test = investition_sum(sum, persent);
-    QCOMPARE(test,32000.0);
+/*void TestTest::test_matrix()
+{    
+    int result, check_areey_main, check_areey_secondary_diagonal;
+    int a = 2;
+    int matrix1[2][2] = {14, 36, 25, 85};
+    int matrix2[2][2] = {14, 25, 36, 85};
+    transport_areey_main(matrix1, a);
+    check_areey_main = comparing_transport_areey_main(matrix1, matrix2, a);
+    transport_areey_secondary_diagonal(matrix1, a);
+    check_areey_secondary_diagonal = comparing_transport_areey_secondary_diagonal(matrix1, matrix2, a);
+    result = enter_result(check_areey_main, check_areey_secondary_diagonal);
+
+    QCOMPARE(result,1);
     QVERIFY2(true, "Failure");
 }*/
 

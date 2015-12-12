@@ -33,7 +33,6 @@ int comparing_transport_areey_main(int **matrix1, int **matrix2, int a)
             }
         }
     }
-    printf("Q = %d\n", check_areey_main);
     return(check_areey_main);
     return_areey(matrix1, a);
 }
@@ -87,7 +86,6 @@ int comparing_transport_areey_secondary_diagonal(int**matrix1, int**matrix2, int
             }
         }
     }
-    printf("Q = %d\n", check_areey_secondary_diagonal);
     return(check_areey_secondary_diagonal);
 }
 

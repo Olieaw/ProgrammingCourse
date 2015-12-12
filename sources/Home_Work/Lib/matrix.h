@@ -24,6 +24,8 @@ int enter_result(int, int);
 void enter_manually_matrix1(int**, int);
 void enter_manually_matrix2(int**, int);
 void enter_keyboard(int**, int**, int);
+void print_matrix1(int**, int);
+void print_matrix2(int**, int);
 
 #ifdef __cplusplus
 }

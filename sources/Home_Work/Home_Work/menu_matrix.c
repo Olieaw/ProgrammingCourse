@@ -89,11 +89,8 @@ void matrix()
 
         /// Этот код требует ваших мне устных комментариев,
         /// давайте найдем время обсудить его...
-        printf("\n\n");
         transport_areey_main(matrix1, a);
-        printf("\n\n");
         check_areey_main = comparing_transport_areey_main(matrix1, matrix2, a);
-        printf("\n\n");
         transport_areey_secondary_diagonal(matrix1, a);
         check_areey_secondary_diagonal = comparing_transport_areey_secondary_diagonal(matrix1, matrix2, a);
         result = enter_result(check_areey_main, check_areey_secondary_diagonal);
@@ -104,6 +101,16 @@ void matrix()
         else
         {
             printf("Matrix is not transported\n");
+        }
+
+        for(i = 0; i < a; i++)
+        {
+                free(matrix1[i]);
+        }
+
+        for(i = 0; i < a; i++)
+        {
+                free(matrix2[i]);
         }
 }
 
@@ -116,6 +123,7 @@ void enter_manually_matrix1(int **matrix1, int a)
         {
             scanf("%d", &matrix1[i][j]);
         }
+    print_matrix1(matrix1, a);
 }
 
 void enter_manually_matrix2(int **matrix2, int a)
@@ -127,6 +135,7 @@ void enter_manually_matrix2(int **matrix2, int a)
         {
             scanf("%d", &matrix2[i][j]);
         }
+    print_matrix2(matrix2, a);
 }
 
 void enter_keyboard(int **matrix1, int **matrix2, int a)
@@ -152,15 +161,8 @@ void enter_keyboard(int **matrix1, int **matrix2, int a)
         }
         fclose(file_matrix1);
     }
-    printf("\n\n");
-    for(i = 0; i < a; i++)
-    {
-        for(j = 0; j < a; j++)
-        {
-            printf("%d ",matrix1[i][j]);
-        }
-        printf("\n\n");
-    }
+    printf("Matrix 1\n");
+    print_matrix1(matrix1, a);
 
     // Вторая матрица
     FILE *file_matrix2 = fopen ("matrix2.txt", "r");
@@ -181,9 +183,26 @@ void enter_keyboard(int **matrix1, int **matrix2, int a)
             fscanf(file_matrix2, "\n");
         }
         fclose(file_matrix2);
-        fclose(file_matrix2);
     }
-    printf("\n\n");
+    printf("Matrix 2\n");
+    print_matrix1(matrix2, a);
+}
+void print_matrix1(int **matrix1, int a)
+{
+    int i, j;
+    for(i = 0; i < a; i++)
+    {
+        for(j = 0; j < a; j++)
+        {
+            printf("%d ",matrix1[i][j]);
+        }
+        printf("\n\n");
+    }
+}
+
+void print_matrix2(int **matrix2, int a)
+{
+    int i, j;
     for(i = 0; i < a; i++)
     {
         for(j = 0; j < a; j++)
