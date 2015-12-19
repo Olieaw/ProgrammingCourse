@@ -2,6 +2,7 @@
 #include "issituated.h"
 #include "multiply.h"
 #include "matrix.h"
+#include "string_book.h"
 
 int menu()
 {
@@ -11,6 +12,7 @@ int menu()
     printf("2.Houses\n");
     printf("3.Multiply\n");
     printf("4.Matrix\n");
+    printf("5.String\n");
     printf("0.Exit\n");
     printf(">>> ");
 
@@ -33,6 +35,10 @@ int menu()
         case 4:
             system("cls");
             menu_matrix();
+            break;
+        case 5:
+            system("cls");
+            menu_string_book();
             break;
         case 0:
             system("cls");

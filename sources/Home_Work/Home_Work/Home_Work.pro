@@ -8,7 +8,8 @@ SOURCES += main.c \
     menu_multiplication.c \
     menu_investition.c \
     menu_issituated.c \
-    menu_matrix.c
+    menu_matrix.c \
+    menu_string_book.c
 
 HEADERS += \
     main.h

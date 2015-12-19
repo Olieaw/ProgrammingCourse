@@ -42,6 +42,43 @@ void menu_string_book()
 
 void string_book()
 {
-
+    int keyword = enter_keyword();
+    int write_string = file();
+    //comparing_characters(keyword, write_string);
 }
+
+int enter_keyword()
+{
+    char keyword[100];
+    int i = 0;
+    printf("Print keyword\n");
+    gets(keyword);
+    while (keyword[i] != 0)
+    {
+    putchar(keyword[i]);
+    printf("\n");
+    i++;
+    }
+    return (keyword);
+}
+
+int file()
+{
+    FILE * open_file = fopen("string_book.txt" , "r");
+    char write_string [100];
+
+    if (open_file == NULL)
+    {
+        printf("Error open file\n");
+    }
+    else
+    {
+        fgets(write_string, 100, open_file);
+        fclose (open_file);
+    }
+    return (write_string);
+}
+
+
+
 

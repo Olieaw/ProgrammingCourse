@@ -44,7 +44,7 @@ void matrix()
 {
     int **matrix1, **matrix2;
     int i, a, result, check_areey_main, check_areey_secondary_diagonal;
-    printf("Print matrix size: a:\n");
+    printf("Enter matrix size: a:\n");
     scanf("%d", &a);
     matrix1 = (int**)malloc(a*sizeof(int*));
     for(i = 0; i < a; i++)

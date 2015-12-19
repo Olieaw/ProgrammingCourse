@@ -14,13 +14,15 @@ SOURCES +=  \
     issituated.c \
     multiply.c \
     investition.c \
-    matrix.c
+    matrix.c \
+    string_book.c
 
 HEADERS += \
     issituated.h \
     multiply.h \
     investition.h \
-    matrix.h
+    matrix.h \
+    string_book.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
