@@ -14,10 +14,9 @@ extern "C" {
 
 void menu_string_book();
 void string_book();
-int enter_keyword();
-int file();
-void comparing_characters(int, int);
-//comparing_characters_2(int,int, char, int, int);
+void poisk(char*, char*, FILE*);
+void file(char*, char*);
+int print_book(char*, char*);
 
 #ifdef __cplusplus
 }

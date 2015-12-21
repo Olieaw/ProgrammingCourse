@@ -15,7 +15,7 @@ void menu_matrix()
         {
         case 1:
             system("cls");
-            matrix();
+            determination_of_the_size();
             menu_matrix();
             break;
         case 9:
@@ -40,10 +40,18 @@ void menu_matrix()
     }
 }
 
-void matrix()
+int determination_of_the_size()
 {
+    int a, result, way;;
     int **matrix1, **matrix2;
-    int i, a, result, check_areey_main, check_areey_secondary_diagonal;
+    result = matrix(matrix1, matrix2, a, way);
+    return (result);
+}
+
+int matrix(int **matrix1,int **matrix2, int a, int way)
+{
+
+    int i, result, check_areey_main, check_areey_secondary_diagonal;
     printf("Enter matrix size: a:\n");
     scanf("%d", &a);
     matrix1 = (int**)malloc(a*sizeof(int*));
@@ -57,7 +65,6 @@ void matrix()
     {
         matrix2[i] = (int*)malloc(a*sizeof(int));
     }
-    int way;
 
     printf("How to enter\n");
     printf("1.Manually\n");
@@ -87,8 +94,6 @@ void matrix()
         menu_matrix();
     }
 
-        /// Этот код требует ваших мне устных комментариев,
-        /// давайте найдем время обсудить его...
         transport_areey_main(matrix1, a);
         check_areey_main = comparing_transport_areey_main(matrix1, matrix2, a);
         transport_areey_secondary_diagonal(matrix1, a);
@@ -106,12 +111,9 @@ void matrix()
         for(i = 0; i < a; i++)
         {
                 free(matrix1[i]);
-        }
-
-        for(i = 0; i < a; i++)
-        {
                 free(matrix2[i]);
         }
+        return(result);
 }
 
 void enter_manually_matrix1(int **matrix1, int a)

@@ -11,11 +11,10 @@ void consider_element_multiplier(int multiplier1, int multiplier2)
         consider_copy = consider_copy / 10;
         spase_consider++;
     }
-    count_terms_second_element_and_add_in_array(multiplier1, multiplier2, spase_consider, consider);
+    count_data(multiplier1, multiplier2, spase_consider, consider);
 }
 
-/// И это тоже лично обсудим, так это многословно...
-void count_terms_second_element_and_add_in_array(int multiplier1, int multiplier2, int spase_consider, int consider)
+void count_data(int multiplier1, int multiplier2, int spase_consider, int consider)
 {
     int spase_multiplier2, spase_multiplier1, i, j;
     int digit[10];
@@ -60,7 +59,6 @@ void count_terms_second_element_and_add_in_array(int multiplier1, int multiplier
             spase_element[i]++;
         }
     }
-
 
     //печать
 

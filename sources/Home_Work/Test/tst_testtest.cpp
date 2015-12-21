@@ -16,7 +16,7 @@ public:
 private Q_SLOTS:
     void test_investition();
     void test_issituated();
-    //void test_matrix();
+    void test_matrix();
 };
 
 TestTest::TestTest()
@@ -49,21 +49,16 @@ void TestTest::test_issituated()
     QCOMPARE(test2,1);
 }
 
-/*void TestTest::test_matrix()
+void TestTest::test_matrix()
 {    
-    int result, check_areey_main, check_areey_secondary_diagonal;
-    int a = 2;
+    /*int result, a = 2;
     int matrix1[2][2] = {14, 36, 25, 85};
     int matrix2[2][2] = {14, 25, 36, 85};
-    transport_areey_main(matrix1, a);
-    check_areey_main = comparing_transport_areey_main(matrix1, matrix2, a);
-    transport_areey_secondary_diagonal(matrix1, a);
-    check_areey_secondary_diagonal = comparing_transport_areey_secondary_diagonal(matrix1, matrix2, a);
-    result = enter_result(check_areey_main, check_areey_secondary_diagonal);
+    result = determination_of_the_size();
 
     QCOMPARE(result,1);
-    QVERIFY2(true, "Failure");
-}*/
+    QVERIFY2(true, "Failure");*/
+}
 
 QTEST_APPLESS_MAIN(TestTest)
 

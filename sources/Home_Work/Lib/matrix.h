@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 void menu_matrix();
-void matrix();
+int matrix(int**, int**, int, int);
 void arrey1(int**, int);
 void transport_areey_main(int**, int);
 void transport_areey_secondary_diagonal(int**, int);
@@ -26,6 +26,7 @@ void enter_manually_matrix2(int**, int);
 void enter_keyboard(int**, int**, int);
 void print_matrix1(int**, int);
 void print_matrix2(int**, int);
+int determination_of_the_size();
 
 #ifdef __cplusplus
 }

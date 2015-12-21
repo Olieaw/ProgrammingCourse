@@ -1,22 +1,24 @@
-/*#include "string_book.h"
+#include "string_book.h"
 
-void comparing_characters(int keyword,int write_string)
+void poisk(char *write_string, char *keyword, FILE *open_file)
 {
-    char word;
-    int i = 0, j = 0;
-    comparing_characters_2(i, j, word, keyword, write_string);
+
+    char *first_occurrence_of_write_string, str = 0;
+    first_occurrence_of_write_string = 0;
+    while (fgets(write_string, 100, open_file) && first_occurrence_of_write_string == 0)
+    {
+        first_occurrence_of_write_string = strstr (write_string, keyword);
+        str++;
+        if (first_occurrence_of_write_string != 0)
+        {
+            first_occurrence_of_write_string = print_book(write_string, first_occurrence_of_write_string);
+        }
+    }
 }
 
-void comparing_characters_2(int i,int j, char word, int keyword,int write_string)
+int print_book(char *write_string, char *first_occurrence_of_write_string)
 {
-    if((keyword[i] = write_string[i]) && (keyword != 0))
-    {
-        word[j] = keyword[i];
-        j++;
-        comparing_characters_2(i, j, word, keyword, write_string);
-    }
-    else
-    {
-        i++;
-    }
-}*/
+    puts(write_string);
+    first_occurrence_of_write_string = 0;
+    return (first_occurrence_of_write_string);
+}
