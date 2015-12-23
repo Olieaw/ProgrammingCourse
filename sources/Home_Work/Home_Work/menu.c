@@ -3,6 +3,7 @@
 #include "multiply.h"
 #include "matrix.h"
 #include "string_book.h"
+#include "main.h"
 
 int menu()
 {
@@ -22,23 +23,23 @@ int menu()
         {
         case 1:
             system("cls");
-            menu_investition();
+            input();
             break;
         case 2:
             system("cls");
-            menu_issituated();
+            issituated();
             break;
         case 3:
             system("cls");
-            menu_multiply();
+            multiply();
             break;
         case 4:
             system("cls");
-            menu_matrix();
+            matrix();
             break;
         case 5:
             system("cls");
-            menu_string_book();
+            string_book();
             break;
         case 0:
             system("cls");

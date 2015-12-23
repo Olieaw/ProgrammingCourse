@@ -6,6 +6,6 @@
 #include <string.h>
 #include <malloc.h>
 
-void menu();
+void matrix();
 
 #endif // MAIN

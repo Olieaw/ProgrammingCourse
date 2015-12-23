@@ -14,8 +14,8 @@ SOURCES +=  \
     issituated.c \
     multiply.c \
     investition.c \
-    matrix.c \
-    string_book.c
+    string_book.c \
+    matrix_logic.c
 
 HEADERS += \
     issituated.h \

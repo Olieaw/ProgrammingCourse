@@ -50,14 +50,33 @@ void TestTest::test_issituated()
 }
 
 void TestTest::test_matrix()
-{    
-    /*int result, a = 2;
-    int matrix1[2][2] = {14, 36, 25, 85};
-    int matrix2[2][2] = {14, 25, 36, 85};
-    result = determination_of_the_size();
+{
+    int **m1, **m2;
+    int i, a = 2;
+    m1 = (int**)malloc(2*sizeof(int*));
+    for(i = 0; i < a; i++)
+    {
+        m1[i] = (int*)malloc(2*sizeof(int));
+    }
 
-    QCOMPARE(result,1);
-    QVERIFY2(true, "Failure");*/
+    m2 = (int**)malloc(2*sizeof(int*));
+    for(i = 0; i < a; i++)
+    {
+        m2[i] = (int*)malloc(2*sizeof(int));
+    }
+    m1[0][0] = 1; m1[0][1] = 2;
+    m1[1][0] = 3; m1[1][1] = 4;
+
+    m2[0][0] = 1; m2[0][1] = 3;
+    m2[1][0] = 2; m2[1][1] = 4;
+    QCOMPARE(are_matrixes_transposable(m1, m2, 2), 1);
+    for(i = 0; i < a; i++)
+    {
+        free(m1[i]);
+        free(m2[i]);
+    }
+    free(m1);
+    free(m2);
 }
 
 QTEST_APPLESS_MAIN(TestTest)

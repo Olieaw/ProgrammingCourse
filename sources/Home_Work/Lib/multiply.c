@@ -1,5 +1,3 @@
-#include "multiply.h"
-
 void consider_element_multiplier(int multiplier1, int multiplier2)
 {
     int consider, consider_copy;

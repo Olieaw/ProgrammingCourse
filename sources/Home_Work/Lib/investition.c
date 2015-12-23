@@ -1,5 +1,3 @@
-#include "investition.h"
-
 double investition_sum(double sum, double percent)
 {
     int year;

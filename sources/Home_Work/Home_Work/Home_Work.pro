@@ -5,11 +5,11 @@ CONFIG -= qt
 
 SOURCES += main.c \
     menu.c \
-    menu_multiplication.c \
-    menu_investition.c \
-    menu_issituated.c \
-    menu_matrix.c \
-    menu_string_book.c
+    matrix_ui.c \
+    investition.c \
+    issituated.c \
+    multiplication.c \
+    string_book.c
 
 HEADERS += \
     main.h

@@ -12,8 +12,6 @@ extern "C" {
 
 #endif
 
-void menu_multiply();
-void multiply();
 void consider_element_multiplier(int, int);
 void count_data(int, int, int,int);
 void print_multiplier(int, int, int, int, int, int, int, int);
