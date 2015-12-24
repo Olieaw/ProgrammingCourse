@@ -1,0 +1,106 @@
+
+
+
+void transport_areey_main(int **matrix1, int a)
+{
+    int copy , i , j;
+    int b = 0;
+    for (i = 0; i < a; i++)
+    {
+        b++;
+        for(j = 0; j < b; j++)
+        {
+            copy = matrix1[i][j];
+            matrix1[i][j] = matrix1[j][i];
+            matrix1[j][i] = copy;
+        }
+    }
+}
+
+int comparing_transport_areey_main(int **matrix1, int **matrix2, int a)
+{
+    int i, j, check_areey_main = 1;
+    for (i = 0; i < a; i++)
+    {
+        for(j = 0; j < a; j++)
+        {
+            if((matrix1[i][j] == matrix2[i][j]) && (check_areey_main == 1))
+            {
+                check_areey_main = 1;
+            }
+            else
+            {
+                check_areey_main = 0;
+            }
+        }
+    }
+    return(check_areey_main);
+    return_areey(matrix1, a);
+}
+
+void return_areey(int **matrix1, int a)
+{
+    int copy , i , j;
+    int b = 0;
+    for (i = 0; i < a; i++)
+    {
+        b++;
+        for(j = 0; j < b; j++)
+        {
+            copy = matrix1[i][j];
+            matrix1[i][j] = matrix1[j][i];
+            matrix1[j][i] = copy;
+        }
+    }
+}
+
+void transport_areey_secondary_diagonal(int **matrix1, int a)
+{
+    int i, j, copy;
+    int b = a;
+    for (i = 0; i < a - 1; i++)
+    {
+        b--;
+        for(j = 0; j < b; j++)
+        {
+            copy = matrix1[i][j];
+            matrix1[i][j] = matrix1[a-j-1][a-i-1];
+            matrix1[a-j-1][a-i-1] = copy;
+        }
+    }
+}
+
+int comparing_transport_areey_secondary_diagonal(int**matrix1, int**matrix2, int  a)
+{
+    int i, j, check_areey_secondary_diagonal;
+    for (i = 0; i < a; i++)
+    {
+        for(j = 0; j < a; j++)
+        {
+            if((matrix1[i][j] == matrix2[i][j]) && (check_areey_secondary_diagonal == 1))
+            {
+                check_areey_secondary_diagonal = 1;
+            }
+            else
+            {
+                check_areey_secondary_diagonal = 0;
+            }
+        }
+    }
+    return(check_areey_secondary_diagonal);
+}
+
+int enter_result(int check_areey_main, int check_areey_secondary_diagonal)
+{
+    if((check_areey_main == 1) || (check_areey_secondary_diagonal == 1))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+
+

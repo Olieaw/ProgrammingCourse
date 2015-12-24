@@ -1,5 +1,5 @@
 #include "main.h"
-#include "investition.h"
+#include "investition_logic.h"
 
 void input()
 {

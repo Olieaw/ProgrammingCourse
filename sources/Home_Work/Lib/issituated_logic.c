@@ -1,4 +1,4 @@
-#include "issituated.h"
+#include "issituated_logic.h"
 
 int calculation(struct poligon plot, struct poligon house1, struct poligon house2)
 {

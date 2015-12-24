@@ -1,26 +1,30 @@
 #include <iostream>
+#include <list.h>
+//#include "cpp_lib.h"
+
+using namespace std;
 /*Линейный список
 Реализовать класс ЛИНЕЙНЫЙ СПИСОК (целых чисел). Требуемые методы: конструктор, деструктор,
 вставка элемента, поиск элемента, удаление элемента*/
 
-using namespace std;
-
-int main()
+main()
 {
- /*clrscr();
-  int N; //Число элементов в список
-  int x; //Элементы вводимые в список
-  List lst; //Переменная, тип которой список
+   /* int N;
+    int x;
+    List lst;
 
-   cout<<"N = ";cin>>N; //Указали сколько элементов вводить в список
+    cout<<"N = ";
+    cin>>N;
 
-for (int i=0;i<N;i++)
- {
-  cout<<i+1<<". x = "; cin>>x; //Ввод x с клавиатуры
-  lst.Add(x); //Добавление элемента в список
- }
+    for (int i=0;i<N;i++)
+    {
+        cout<<i+1<<". x = ";
+        cin>>x;
+        lst.Add(x);
+    }
 
-lst.Show(); //Вывод списка на экран
- getch();*/
+    lst.Show();
+    getch();*/
+
 }
 

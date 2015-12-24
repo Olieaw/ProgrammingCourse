@@ -1,8 +1,8 @@
 #include <QString>
 #include <QtTest>
-#include "investition.h"
-#include "issituated.h"
-#include "matrix.h"
+#include "investition_logic.h"
+#include "issituated_logic.h"
+#include "matrix_logic.h"
 
 
 /// Тесты нужно реализовать обязательно
@@ -17,6 +17,7 @@ private Q_SLOTS:
     void test_investition();
     void test_issituated();
     void test_matrix();
+    void test_string();
 };
 
 TestTest::TestTest()
@@ -49,27 +50,48 @@ void TestTest::test_issituated()
     QCOMPARE(test2,1);
 }
 
+void TestTest::test_string()
+{
+    char *keyword;
+    char *write_string;
+
+    write_string = (char*)malloc(1000*sizeof(char));
+    keyword = (char*)malloc(100*sizeof(char));
+
+    FILE *open_file = fopen("string_book.txt" , "r");   //Название книги вводить в столбик
+    if (open_file != NULL)
+    {
+        keyword = "O";
+        fclose(open_file);
+    }
+
+    free(write_string);
+    free(keyword);
+}
+
 void TestTest::test_matrix()
 {
     int **m1, **m2;
     int i, a = 2;
-    m1 = (int**)malloc(2*sizeof(int*));
+    m1 = (int**)malloc(a*sizeof(int*));
     for(i = 0; i < a; i++)
     {
-        m1[i] = (int*)malloc(2*sizeof(int));
+        m1[i] = (int*)malloc(a*sizeof(int));
     }
 
-    m2 = (int**)malloc(2*sizeof(int*));
+    m2 = (int**)malloc(a*sizeof(int*));
     for(i = 0; i < a; i++)
     {
-        m2[i] = (int*)malloc(2*sizeof(int));
+        m2[i] = (int*)malloc(a*sizeof(int));
     }
     m1[0][0] = 1; m1[0][1] = 2;
     m1[1][0] = 3; m1[1][1] = 4;
 
     m2[0][0] = 1; m2[0][1] = 3;
     m2[1][0] = 2; m2[1][1] = 4;
+
     QCOMPARE(are_matrixes_transposable(m1, m2, 2), 1);
+
     for(i = 0; i < a; i++)
     {
         free(m1[i]);

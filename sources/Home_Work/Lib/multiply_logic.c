@@ -1,3 +1,5 @@
+#include "multiply_logic.h"
+
 void consider_element_multiplier(int multiplier1, int multiplier2)
 {
     int consider, consider_copy;
@@ -96,7 +98,7 @@ void count_data(int multiplier1, int multiplier2, int spase_consider, int consid
             printf(" ");
         }
         printf("%d\n", element[i]);
-    }   
+    }
     print_equal_symbol(spase_consider);
     printf("\n");
     printf(" ");

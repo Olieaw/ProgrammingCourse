@@ -1,7 +1,7 @@
-#include "investition.h"
-#include "issituated.h"
-#include "multiply.h"
-#include "matrix.h"
+#include "investition_logic.h"
+#include "issituated_logic.h"
+#include "multiply_logic.h"
+#include "matrix_logic.h"
 #include "string_book.h"
 #include "main.h"
 

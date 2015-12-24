@@ -9,14 +9,6 @@ void string_book()
     write_string = (char*)malloc(1000*sizeof(char));    
     keyword = (char*)malloc(100*sizeof(char));
 
-    file(write_string, keyword);
-
-    free(write_string);
-    free(keyword);
-}
-
-void file(char *write_string, char *keyword)
-{
     FILE *open_file = fopen("string_book.txt" , "r");   //Название книги вводить в столбик
     if (open_file == NULL)
     {
@@ -32,5 +24,10 @@ void file(char *write_string, char *keyword)
         poisk(write_string, keyword, open_file);
         fclose(open_file);
     }
+
+    free(write_string);
+    free(keyword);
 }
+
+
 

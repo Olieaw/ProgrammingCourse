@@ -11,18 +11,18 @@ TEMPLATE = lib
 CONFIG += staticlib
 
 SOURCES +=  \
-    issituated.c \
-    multiply.c \
-    investition.c \
-    string_book.c \
-    matrix_logic.c
+    matrix_logic.c \
+    string_book_logic.c \
+    investition_logic.c \
+    issituated_logic.c \
+    multiply_logic.c
 
 HEADERS += \
-    issituated.h \
-    multiply.h \
-    investition.h \
-    matrix.h \
-    string_book.h
+    matrix_logic.h \
+    string_book.h \
+    multiply_logic.h \
+    issituated_logic.h \
+    investition_logic.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
