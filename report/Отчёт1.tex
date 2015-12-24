@@ -1,0 +1,594 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[dvips]{graphicx}
+\graphicspath{{/}}
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+%\usepackage{tikz-uml}               % uml диаграммы
+
+% Генератор текста
+\usepackage{blindtext}
+
+%------------------------------------------------------------------------------
+
+% Подсветка синтаксиса
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+ 
+ % Цвета для кода
+\definecolor{string}{HTML}{B40000} % цвет строк в коде
+\definecolor{comment}{HTML}{008000} % цвет комментариев в коде
+\definecolor{keyword}{HTML}{1A00FF} % цвет ключевых слов в коде
+\definecolor{morecomment}{HTML}{8000FF} % цвет include и других элементов в коде
+\definecolor{captiontext}{HTML}{FFFFFF} % цвет текста заголовка в коде
+\definecolor{captionbk}{HTML}{999999} % цвет фона заголовка в коде
+\definecolor{bk}{HTML}{FFFFFF} % цвет фона в коде
+\definecolor{frame}{HTML}{999999} % цвет рамки в коде
+\definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+ 
+ % Настройки отображения кода
+\lstset{
+language=C++, % Язык кода по умолчанию
+morekeywords={string, vector}, % если хотите добавить ключевые слова, то добавляйте
+ % Цвета
+keywordstyle=\color{keyword}\ttfamily\bfseries,
+stringstyle=\color{string}\ttfamily,
+commentstyle=\color{comment}\ttfamily\itshape,
+morecomment=[l][\color{morecomment}]{\#}, 
+ % Настройки отображения     
+breaklines=true, % Перенос длинных строк
+basicstyle=\ttfamily\footnotesize, % Шрифт для отображения кода
+backgroundcolor=\color{bk}, % Цвет фона кода
+%frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep, % Рамка, подогнанная к заголовку
+frame=tblr
+rulecolor=\color{frame}, % Цвет рамки
+tabsize=3, % Размер табуляции в пробелах
+showstringspaces=false,
+ % Настройка отображения номеров строк. Если не нужно, то удалите весь блок
+numbers=left, % Слева отображаются номера строк
+stepnumber=1, % Каждую строку нумеровать
+numbersep=5pt, % Отступ от кода 
+numberstyle=\small\color{black}, % Стиль написания номеров строк
+ % Для отображения русского языка
+extendedchars=true,
+literate={Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+  {~}{{\textasciitilde}}1
+  {а}{{\selectfont\char224}}1
+  {б}{{\selectfont\char225}}1
+  {в}{{\selectfont\char226}}1
+  {г}{{\selectfont\char227}}1
+  {д}{{\selectfont\char228}}1
+  {е}{{\selectfont\char229}}1
+  {ё}{{\"e}}1
+  {ж}{{\selectfont\char230}}1
+  {з}{{\selectfont\char231}}1
+  {и}{{\selectfont\char232}}1
+  {й}{{\selectfont\char233}}1
+  {к}{{\selectfont\char234}}1
+  {л}{{\selectfont\char235}}1
+  {м}{{\selectfont\char236}}1
+  {н}{{\selectfont\char237}}1
+  {о}{{\selectfont\char238}}1
+  {п}{{\selectfont\char239}}1
+  {р}{{\selectfont\char240}}1
+  {с}{{\selectfont\char241}}1
+  {т}{{\selectfont\char242}}1
+  {у}{{\selectfont\char243}}1
+  {ф}{{\selectfont\char244}}1
+  {х}{{\selectfont\char245}}1
+  {ц}{{\selectfont\char246}}1
+  {ч}{{\selectfont\char247}}1
+  {ш}{{\selectfont\char248}}1
+  {щ}{{\selectfont\char249}}1
+  {ъ}{{\selectfont\char250}}1
+  {ы}{{\selectfont\char251}}1
+  {ь}{{\selectfont\char252}}1
+  {э}{{\selectfont\char253}}1
+  {ю}{{\selectfont\char254}}1
+  {я}{{\selectfont\char255}}1
+  {А}{{\selectfont\char192}}1
+  {Б}{{\selectfont\char193}}1
+  {В}{{\selectfont\char194}}1
+  {Г}{{\selectfont\char195}}1
+  {Д}{{\selectfont\char196}}1
+  {Е}{{\selectfont\char197}}1
+  {Ё}{{\"E}}1
+  {Ж}{{\selectfont\char198}}1
+  {З}{{\selectfont\char199}}1
+  {И}{{\selectfont\char200}}1
+  {Й}{{\selectfont\char201}}1
+  {К}{{\selectfont\char202}}1
+  {Л}{{\selectfont\char203}}1
+  {М}{{\selectfont\char204}}1
+  {Н}{{\selectfont\char205}}1
+  {О}{{\selectfont\char206}}1
+  {П}{{\selectfont\char207}}1
+  {Р}{{\selectfont\char208}}1
+  {С}{{\selectfont\char209}}1
+  {Т}{{\selectfont\char210}}1
+  {У}{{\selectfont\char211}}1
+  {Ф}{{\selectfont\char212}}1
+  {Х}{{\selectfont\char213}}1
+  {Ц}{{\selectfont\char214}}1
+  {Ч}{{\selectfont\char215}}1
+  {Ш}{{\selectfont\char216}}1
+  {Щ}{{\selectfont\char217}}1
+  {Ъ}{{\selectfont\char218}}1
+  {Ы}{{\selectfont\char219}}1
+  {Ь}{{\selectfont\char220}}1
+  {Э}{{\selectfont\char221}}1
+  {Ю}{{\selectfont\char222}}1
+  {Я}{{\selectfont\char223}}1
+  {і}{{\selectfont\char105}}1
+  {ї}{{\selectfont\char168}}1
+  {є}{{\selectfont\char185}}1
+  {ґ}{{\selectfont\char160}}1
+  {І}{{\selectfont\char73}}1
+  {Ї}{{\selectfont\char136}}1
+  {Є}{{\selectfont\char153}}1
+  {Ґ}{{\selectfont\char128}}1
+  {\{}{{{\color{brackets}\{}}}1 % Цвет скобок {
+  {\}}{{{\color{brackets}\}}}}1 % Цвет скобок }
+}
+ 
+ % Для настройки заголовка кода
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{сaptiontext}}
+\DeclareCaptionFormat{listing}{\parbox{\linewidth}{\colorbox{сaptionbk}{\parbox{\linewidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\renewcommand{\lstlistingname}{Код} % Переименование Listings в нужное именование структуры
+
+
+%------------------------------------------------------------------------------
+
+\author{Д.~А.~Курякин}
+\title{Программирование}
+\begin{document}
+\maketitle
+\tableofcontents{}
+
+\chapter{Основные конструкции языка}
+
+\section{Задание 1. Вклад в банке}
+\subsection{Задание}
+\hspace{\parindent}
+Задана сумма и процентная ставка. Определить какяя сумма будет через 5 лет вклада в банке. 
+\subsection{Теоретические сведения}
+
+%Конструкции языка, библиотечные функции, инструменты использованные при разработке приложения.
+\hspace{\parindent}
+При разработке приложения были задействована стандартная библиотека <stdio.h>. 
+
+%Сведения о предметной области, которые позволили реализовать алгоритм решения задачи.
+\hspace{\parindent}
+Было решено, написать формулу которая вситает вклад в банке.
+
+\subsection{Проектирование}
+%Какие функции было решено выделить, какие у этих функций контракты, как организовано взаимодействие с пользователем (чтение/запись из консоли, из файла, из параметров командной строки), форматы файлов и др.
+\hspace{\parindent}
+В ходе проектирования было решено выделить две функций, одна из которых отвечает за логику, а друкая за взаимодействие с пользователем.
+\begin{enumerate}
+\item \textbf{Логика}
+\begin{itemize}
+\item \verb-double investition_sum(double sum, double percent)-
+
+Эта функция вычисляет сумму. Она содержит два параметра вещественного типа - первоначальную сумму и процентную ставку. Возвращаемое значение имеет вещественный тип.
+\end{itemize}
+
+\textbf{\item Взаимодействие с пользователем}
+\begin{itemize}
+\item \verb-void input()-
+
+Эта функция выводит в консоль результат функции. Она читает две вещественные переменные и выводит их в функцию \item \verb-double investition_sum(double sum, double percent)-.
+\end{itemize}
+\end{enumerate}
+
+\subsection{Описание тестового стенда и методики тестирования}
+%Среда, компилятор, операционная система, др.
+
+\begin{flushleft}
+\textbf{Интегрированная среда разработки:} Qt Creator 3.5.0 (opensource)
+
+\textbf{Компилятор:} GCC 4.9.1 20140922 (Red Hat 4.9.1-10)
+
+\textbf{Операционная система:} Debian Windows 8.1 64-бита
+
+\end{flushleft}
+%Автоматическое, статический анализ кода, динамический.
+
+На всех стадиях разработки приложения проходило автоматическо етестирование. Осуществлялось посредством модульных тестов \textit{Qt}, основанных на библиотеке  \textit{QTestLib}. 
+
+\subsection{Тестовый план и результаты тестирования}
+%Описание по шагам хода тестирования, с указанием соответствия или несоответствия ожидаемым результатам.
+\item \textbf{Модульные тесты \textit{Qt}}
+\begin{description}
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] sum = 1000, persent = 100
+\item[Выходные данные:] 32000.0
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\subsection{Выводы}
+%Слова от чистого сердца
+\hspace{\parindent}
+В ходе выполнения работы автор получил опыт создания многомодульного приложения с отделением логики от взаимодействия с пользователем. Укрепил навыки создания функций. А также научился тестировать программу с помощью автоматических тестов.
+
+\subsection*{Листинги}
+\begin{itemize}
+\item[] \verb-void input()-
+\lstinputlisting[]
+{../sources/Home_Work/Home_Work/investition.h}
+\item[] \verb-double investition_sum(double sum, double percent)-
+\lstinputlisting[]
+{../sources/Home_Work/Lib/investition.h}
+\end{itemize}
+%\todo[inline]{Не забыть вставить все исходники}
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+
+\section{Задание 2. Рамзмещение двухдомов на участке}
+
+\subsection{Задание}
+\hspace{\parindent}
+Дано длина и ширина участка, длина и ширина двух домов. Проверить можнол ли разместить дома на участке.
+\subsection{Теоретические сведения}
+%Конструкции языка, библиотечные функции, инструменты использованные при разработке приложения.
+\hspace{\parindent}
+При разработке приложения были задействованы следующие конструкции языка: операторы ветвления \textbf{if} и \textbf{if-else-if} и \textbf{\textit{struct}}-- и были использованы функции стандартной библиотеки \textit{printf}, \textit{scanf}, определенные в заголовочном файле \textit{stdio.h}; функции, определенные в \textit{stdlib.h}.
+
+%Сведения о предметной области, которые позволили реализовать алгоритм решения задачи.
+\hspace{\parindent}
+В дано было указаны длина и ширина участка, длина и ширина двух домов. В теории длина и ширина двух домов должна быть не больше, длины и ширины участка.
+\subsection{Проектирование}
+%Какие функции было решено выделить, какие у этих функций контракты, как организовано взаимодействие с пользователем (чтение/запись из консоли, из файла, из параметров командной строки), форматы файлов и др.
+\hspace{\parindent}
+В ходе проектирования было решено выделить две функций, одна из которых отвечает за логику, а друкая за взаимодействие с пользователем.
+\begin{enumerate}
+\item \textbf{Логика}
+\begin{itemize}
+\item \verb-int calculation(struct poligon plot, struct poligon house1, struct poligon house2)-
+
+Эта функция вычисляет, помещаются ли два дома в участок. Тип возвращаемого значения -- \textit{\textbf{int}} -- 1, если два дома помещаются, и 0 -- в противном случае.
+\end{itemize}
+
+\textbf{\item Взаимодействие с пользователем}
+
+\begin{itemize}
+\item \verb-void issituated())-
+
+Эта функция осуществляет ввод из консоли размера участка и домов. Имеет параметры типа \textit{\textbf{int}} - это размер участка и домов. 
+\end{itemize}
+\end{enumerate}
+
+\subsection{Описание тестового стенда и методики тестирования}
+%Среда, компилятор, операционная система, др.
+
+\begin{flushleft}
+\textbf{Интегрированная среда разработки:} Qt Creator 3.5.0 (opensource)
+
+\textbf{Компилятор:} GCC 4.9.1 20140922 (Red Hat 4.9.1-10)
+
+\textbf{Операционная система:} Debian Windows 8.1 64-бита
+
+\end{flushleft}
+%Автоматическое, статический анализ кода, динамический.
+
+На всех стадиях разработки приложения проходило автоматическо етестирование. Осуществлялось посредством модульных тестов \textit{Qt}, основанных на библиотеке  \textit{QTestLib}. 
+
+\subsection{Тестовый план и результаты тестирования}
+%Описание по шагам хода тестирования, с указанием соответствия или несоответствия ожидаемым результатам.
+
+\item \textbf{Модульные тесты \textit{Qt}}
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 20, 10, 10, 10, 10, 10
+\item[Выходные данные:] 1
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\subsection{Выводы}
+В ходе выполнения работы автор получил опыт создания многомодульного приложения с отделением логики от взаимодействия с пользователем. Были укреплены навыки в создании структурных типов, тестировании программы с помощью модульных тестов.
+\subsection*{Листинги}
+\begin{itemize}
+
+\end{itemize}
+
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+\chapter{Циклы}
+\section{Задание 1. Умножение в столбик}
+\subsection{Задание}
+\hspace{\parindent}
+Даны натуральные числа M и N. Вывести на экран процесс их умножения в столбик.
+\subsection{Теоритические сведения}
+%Конструкции языка, библиотечные функции, инструменты использованные при разработке приложения.
+\hspace{\parindent}
+При разработке приложения были задействованы следующие конструкции языка: оператор выбора, операторы ветвления \textbf{if} и \textbf{if-else-if}, оператор цикла с предусловием \textbf{while} и оператор цикла со счётчиком \textbf{for} -- и были использованы функции стандартной библиотеки \textit{scanf}, определённые в заголовочном файле \textit{stdio.h}, \textit{malloc}, \textit{free}, определённые в \textit{stdlib.h}.
+
+%Сведения о предметной области, которые позволили реализовать алгоритм решения задачи.
+\hspace{\parindent}
+При реализации алгоритма решения задачи, автор воспользовался методом умножения в столбик целых чисел. Конкретно в таком виде алгоритм используется в России, Франции, Бельгии и других странах.
+\subsection{Проектирование}
+%Какие функции было решено выделить, какие у этих функций контракты, как организовано взаимодействие с пользователем (чтение/запись из консоли, из файла, из параметров командной строки), форматы файлов и др.
+\hspace{\parindent}
+В ходе проектирования было решено выделить 8 функций, 4 из которых отвечают за логику, а оставшиеся -- за взаимодействие с пользователем.
+\begin{enumerate}
+\item \textbf{Логика}
+\begin{itemize}
+\item \verb-void consider_element_multiplier(int multiplier1, int multiplier2)-
+
+Эта функция отвечает за подсчёт количества цифр произведения.
+\end{itemize}
+
+\begin{itemize}
+\item \verb-int spase_mult_1(int copy_multiplier1)-
+
+Эта функция отвечает за подсчёт пробелов первого множителя.
+\end{itemize}
+
+\begin{itemize}
+\item \verb-int spase_mult_2(int copy2_multiplier2)-
+
+Эта функция отвечает за подсчёт пробелов вторго множителя.
+\end{itemize}
+
+\begin{itemize}
+\item \verb-void count_data(int multiplier1, int multiplier2, int spase_consider, int consider)-
+
+Эта функция отвечает за печать в консоль.
+\end{itemize}
+
+\textbf{\item Взаимодействие с пользователем}
+\begin{itemize}
+\item \verb-void print_spase1(int spase_consider, int spase_multiplier1)-
+
+Эта функция отвечает за вывод пробелов в первого множителя.
+\end{itemize}
+
+\begin{itemize}
+\item \verb-void print_spase1(int spase_consider, int spase_multiplier2)-
+
+Эта функция отвечает за вывод пробелов в второго множителя.
+
+\begin{itemize}
+\item \verb-void help_quotient(void);-
+
+Эта функция выводит в консоль информацию о том, как запускать приложение \textbf{Деление уголком} из параметров командной строки. Она не имеет аргументов. Возвращаемое значение - \textit{\textbf{void}}. 
+\end{itemize}
+
+\begin{itemize}
+\item \verb-void print_equal_symbol(int spase_consider)-
+
+эта функция отвечает за печать ровно которое разделяет промежуточные действия при умножении.
+\end{itemize}
+
+\begin{itemize}
+\item \verb-void multiply()-
+
+Эта функция отвечает за взаимодействие с пользователем при запуске приложения в интерактивном режиме. Тоесть считывает с клавиатуры первое и второе слагаемое.
+\end{itemize}
+\end{enumerate}
+\subsection{Описание тестового стенда и методики тестирования}
+%Среда, компилятор, операционная система, др.
+
+\begin{flushleft}
+\textbf{Интегрированная среда разработки:} Qt Creator 3.5.0 (opensource)
+
+\textbf{Компилятор:} GCC 4.9.1 20140922 (Red Hat 4.9.1-10)
+
+\textbf{Операционная система:} Debian GNU/Linux 8 (jessie) 32-бита (version 3.14.1)
+
+\end{flushleft}
+
+%Ручное тестирование.
+%\hspace{\parindent}
+На всех стадиях разработки приложения проходило ручное тестирование . 
+
+\end{enumerate}
+\subsection{Выводы}
+\hspace{\parindent}
+В ходе выполнения работы автор получил опыт в использовании циклов, обработке массивов и динамическом выделении памяти.
+\subsection*{Листинги}
+\begin{itemize}
+
+\end{itemize}
+
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+\chapter{Матрицы}
+\section{Задание 1. Транспортирование матрицы}
+\subsection{Задание}
+\hspace{\parindent}
+Для двух заданных матриц $A(n,n)$ и $B(n,n)$ проверить, можно ли получить вторую из первой применением конечного числа (не более четырех) операций транспонирования относительно главной и побочной диагоналей
+
+\subsection{Теоритические сведения}
+%Конструкции языка, библиотечные функции, инструменты использованные при разработке приложения.
+\hspace{\parindent}
+При разработке приложения были задействованы следующие конструкции языка: оператор ветвления \textbf{if}, оператор цикла со счётчиком \textbf{for} -- и были использованы функции стандартной библиотеки \textit{fopen}, \textit{fclose}, \textit{fscanf}, \textit{fprintf}, определённые в заголовочном файле \textit{stdio.h}, \textit{malloc}, \textit{free}, определённые в \textit{stdlib.h}.
+
+%Сведения о предметной области, которые позволили реализовать алгоритм решения задачи.
+\hspace{\parindent}
+Для реализации алгоритма решения задачи, автор оттранспортировал первую матрицу поглавной и побочной диагонали, и сравнил со второй матрицей. 
+\subsection{Проектирование}
+%Какие функции было решено выделить, какие у этих функций контракты, как организовано взаимодействие с пользователем (чтение/запись из консоли, из файла, из параметров командной строки), форматы файлов и др.
+\hspace{\parindent}
+В ходе проектирования было решено выделить 4 функций, 3 из которых отвечают за логику, а оставшаяся-- за взаимодействие с пользователем.
+\begin{enumerate}
+\item \textbf{Логика}
+\begin{itemize}
+
+\item \verb-int comparing_transport_areey_main(int **matrix1, int **matrix2, int a))-
+
+Эта функция осуществляет проверку транспортируется ли матрица по главной диагонали. Если да то она возвращает 1, если нет то она возвращает 0.
+\end{itemize}
+
+\begin{itemize}
+\item \verb-int comparing_transport_areey_secondary_diagonal(int**matrix1, int**matrix2, int  a)-
+
+Эта функция осуществляет проверку транспортируется ли матрица по побочной диагонали. Если да то она возвращает 1, если нет то она возвращает 0.
+\end{itemize}
+
+\begin{itemize}
+\item \verb-int are_matrixes_transposable(int** matrix1, int** matrix2, int a)-
+
+Эта функция осуществляет проверку полученых данных от функций \verb-int comparing_transport_areey_main(int **matrix1, int **matrix2, int a))- и \verb-int comparing_transport_areey_secondary_diagonal(int**matrix1, int**matrix2, int  a)- спомощью оператор ветвления \textbf{if}, который брабатывает полученые значения. Если да то она возвращает 1, если нет то она возвращает 0.
+\end{itemize}
+
+\textbf{\item Взаимодействие с пользователем}
+
+\begin{itemize}
+\item \verb-void matrix()-
+
+Эта функция отвечает за взаимодействие с пользователем при запуске приложения в интерактивном режиме. Она содержит один аргумент -- размер масива. Также выделяет динамическую память и и заполняет её числами с файла.
+\end{itemize}
+\end{enumerate}
+
+\subsection{Описание тестового стенда и методики тестирования}
+%Среда, компилятор, операционная система, др.
+
+\begin{flushleft}
+\textbf{Интегрированная среда разработки:} Qt Creator 3.5.0 (opensource)
+
+\textbf{Компилятор:} GCC 4.9.1 20140922 (Red Hat 4.9.1-10)
+
+\textbf{Операционная система:} Debian GNU/Linux 8 (jessie) 32-бита (version 3.14.1)
+
+\textbf{Утилита cppcheck:} 1.67
+
+\textbf{Утилита valgrind:} valgrind-3.10.0
+\end{flushleft}
+
+%Ручное тестирование, автоматическое, статический анализ кода, динамический.
+%\hspace{\parindent}
+На всех стадиях разработки приложения проходило автоматическое тестирование c помощью модульных тестов \textit{Qt}, основанных на библиотеке  \textit{QTestLib}.
+
+Аналогично, на всех стадиях разработки приложения проводился динамический анализ утилитой \textit{valgrind}.
+На финальной стадии был проведён статический анализ с помощью утилиты \textit{cppcheck}.\begin{flushleft}
+\textbf{Интегрированная среда разработки:} Qt Creator 3.5.0 (opensource)
+
+\textbf{Компилятор:} GCC 4.9.1 20140922 (Red Hat 4.9.1-10)
+
+\textbf{Операционная система:} Debian Windows 8.1 64-бита
+
+\end{flushleft}
+%Автоматическое, статический анализ кода, динамический.
+
+На всех стадиях разработки приложения проходило автоматическо етестирование. Осуществлялось посредством модульных тестов \textit{Qt}, основанных на библиотеке  \textit{QTestLib}. 
+
+\subsection{Тестовый план и результаты тестирования}
+%Описание по шагам хода тестирования, с указанием соответствия или несоответствия ожидаемым результатам.
+\hspace{\parindent}
+\begin{enumerate}
+\item \textbf{Модульные тесты \textit{Qt}}
+
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:]
+
+\hspace{\parindent}
+\begin{flushleft}
+Первая матрица
+1 2
+3 4
+Вторая матрица
+1 3
+2 4
+\end{flushleft}
+
+\item[Выходные данные:] 1
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+\end{enumerate}
+
+\subsection{Выводы}
+\hspace{\parindent}
+В ходе выполнения работы автор получил опыт в обработке матрицы и в работе с файлами.
+\subsection*{Листинги}
+\begin{itemize}
+
+\end{itemize}
+
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+\chapter{Строки}
+\section{Задание 1. Поиск слов по ключевому слову}
+\subsection{Задание}
+\hspace{\parindent}
+Задан набор ключевых слов, а также текст, в котором хранится длинный список названий
+книг. Выбрать названия, содержащие хотя бы одно из заданных ключевых слов.
+\subsection{Теоритические сведения}
+%Конструкции языка, библиотечные функции, инструменты использованные при разработке приложения.
+\hspace{\parindent}
+При разработке приложения были задействованы следующие конструкции языка: оператор выбора \textbf{switch}, оператор ветвления \textbf{if}, оператор цикла со счётчиком \textbf{for}, оператор цикла с предусловием \textbf{while} -- и были использованы функции стандартной библиотеки \textit{fopen}, \textit{fclose}, \textit{fgets}, \textit{fputs} и \textit{puts}, определённые в заголовочном файле \textit{stdio.h}; \textit{atoi}, \textit{calloc}, \textit{free}, определённые в \textit{stdlib.h}; \textit{strlen}, \textit{memset} и \textit{strcat}, определённые в \textit{string.h}.
+
+%Сведения о предметной области, которые позволили реализовать алгоритм решения задачи.
+\hspace{\parindent}
+Так как формат ввода текста с файла не дан автор решил что каждое название кники будет начинаться с новой строки, после проверки строки на наличие ключевого слова, будет выводится строка в которой находится ключевое слово.
+\subsection{Проектирование}
+%Какие функции было решено выделить, какие у этих функций контракты, как организовано взаимодействие с пользователем (чтение/запись из консоли, из файла, из параметров командной строки), форматы файлов и др.
+\hspace{\parindent}
+В ходе проектирования было решено выделить 3 функций, 2 из которых отвечают за логику, а оставшаяся -- за взаимодействие с пользователем.
+\begin{enumerate}
+\item \textbf{Логика}
+\begin{itemize}
+
+\item \verb-void poisk(char *write_string, char *keyword, FILE *open_file))-
+
+Эта функция открывает файл, проходит по тексту, лежащему в нем, и сравнивает ключевое слово со строкой. Если в строке есть ключевое слово, то запускается функция \verb-print_book(write_string, first_occurrence_of_write_string-
+\end{itemize}
+
+\begin{itemize}
+\item \verb-int print_book(char *write_string, char *first_occurrence_of_write_string)-
+
+Эта функция выводит строку в которой лежит ключевое слово. И возвращает переменную \verb-first_occurrence_of_write_string-
+\end{itemize}
+
+\textbf{\item Взаимодействие с пользователем}
+
+\begin{itemize}
+\item \verb-void string_book()-
+
+Эта функция выделяет память стороке и ключевому слову, а также заполняет их.
+\end{itemize}
+\end{enumerate}
+
+\subsection{Выводы}
+\hspace{\parindent}
+В ходе работы я получил опыт в обработке строк, а также укрепил навык работы с файлами.
+\subsection*{Листинги}
+\begin{itemize}
+
+\end{itemize}
+
+\end{document}
+
