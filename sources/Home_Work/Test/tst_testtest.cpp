@@ -17,7 +17,6 @@ private Q_SLOTS:
     void test_investition();
     void test_issituated();
     void test_matrix();
-    void test_string();
 };
 
 TestTest::TestTest()
@@ -50,24 +49,6 @@ void TestTest::test_issituated()
     QCOMPARE(test2,1);
 }
 
-void TestTest::test_string()
-{
-    char *keyword;
-    char *write_string;
-
-    write_string = (char*)malloc(1000*sizeof(char));
-    keyword = (char*)malloc(100*sizeof(char));
-
-    FILE *open_file = fopen("string_book.txt" , "r");   //Название книги вводить в столбик
-    if (open_file != NULL)
-    {
-        keyword = "O";
-        fclose(open_file);
-    }
-
-    free(write_string);
-    free(keyword);
-}
 
 void TestTest::test_matrix()
 {

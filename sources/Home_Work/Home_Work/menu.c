@@ -5,7 +5,7 @@
 #include "string_book.h"
 #include "main.h"
 
-int menu()
+void menu()
 {
     int way;
     printf("Choose a varint\n");
@@ -56,6 +56,5 @@ int menu()
         puts("Error. Wrong input data type.\n");
         menu();
     }
-    return 0;
 }
 
